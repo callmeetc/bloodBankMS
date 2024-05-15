@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %} Login {% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
+<div>
+    <form method="POST"> {% csrf_token %}
+        <div class="container mt-5">
+            <div class="mb-3">
+                <label for="username" class="form-label"><i style="font-weight: bold;">Username</i></label>
+                <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label"><i style="font-weight: bold;">Password</i></label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password">
+            </div>
+            <br>
+            <input type="submit" value="Login" class="btn btn-outline-info" style="color: #18b6ff; font-size: larger; width: 8rem;">
+            <small class="text-muted ml-2">
+                <a href="{% url 'password-reset' %}">Forgot Password</a>
+               </small>
+        </div>
+        <div style="text-align: right;padding-right: 8rem; font-size: larger;">
+         <small  class="text-muted">
+               Register as Donor<a href="{% url 'become_donor' %}" class="ml-2">Create Account</a>
+            </small>
+        </div>
+    </form>
+
+</div>
+{% endblock %}
+{% block js %}
+<script>
+    {% if alert %}
+    alert("Inavalid Credentials");
+    document.location = "/login"
+    {% endif %}
+</script>
+{% endblock %}
+
