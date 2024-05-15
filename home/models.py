@@ -28,7 +28,7 @@ class Donor(models.Model):
     address = models.TextField(max_length=500, default="")
     blood_group = models.ForeignKey(BloodGroup, on_delete=models.CASCADE)
     gender = models.CharField(max_length=10)
-    image = models.ImageField(default='',upload_to="user_profile_pics")
+    image = models.ImageField(default='user_icon_400x472.png',upload_to="user_profile_pics")
     ready_to_donate = models.BooleanField(default=True)
 
     def __str__(self):
