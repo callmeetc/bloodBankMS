@@ -33,7 +33,7 @@ class Donor(models.Model):
 
     def __str__(self):
         return str(self.blood_group)
-
+##this code is supposed to reduce the size of the apploaded pp to a standar 300*300 but it isnt working well yet... 
     # def save(self):
     #     super().save(self)
         
